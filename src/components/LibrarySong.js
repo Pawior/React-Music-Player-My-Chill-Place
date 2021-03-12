@@ -1,5 +1,5 @@
 import React from "react";
-
+import { playAudio } from "../utility";
 const LibrarySong = ({
   song,
   songs,
@@ -26,15 +26,8 @@ const LibrarySong = ({
     //3 metoda
 
     setCurrentSong(song);
+    playAudio(isPlaying, audioRef);
 
-    if (isPlaying) {
-      const playPromise = audioRef.current.play();
-      if (playPromise !== undefined) {
-        playPromise.then((audio) => {
-          audioRef.current.play();
-        });
-      }
-    }
     // Podświetlenie piosenki w bibliotece po kliknieciu
     // const newSongs = songs.map((song) => {           SPOSÓB TEGO DEBILA
     //   if (song.id === id) {

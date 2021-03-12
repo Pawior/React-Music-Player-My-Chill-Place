@@ -7,7 +7,7 @@ import {
   faPause,
   faVolumeDown,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { playAudio } from "../utility.js";
 const Player = ({
   songInfo,
   setSongInfo,
@@ -19,6 +19,9 @@ const Player = ({
   audioRef,
   volume,
   setVolume,
+  setSongs,
+  songEnd,
+  setSongEnd,
 }) => {
   // useEffect(() => {
   //   const audiooo = document.querySelector(".audiooo");
@@ -44,6 +47,17 @@ const Player = ({
   // State
 
   // Functions
+  const startMusic = () => {
+    // if (isPlaying) {
+    //   const playPromise = audioRef.current.play();
+    //   if (playPromise !== undefined) {
+    //     playPromise.then((audio) => {
+    //       audioRef.current.play();
+    //     });
+    //   }
+    // }
+    return playAudio(isPlaying, audioRef);
+  };
   const musicIdentifier = () => {
     function findIt(element) {
       return element.id == currentSong.id;
@@ -57,13 +71,20 @@ const Player = ({
       i = -1;
     }
     setCurrentSong(songs[(i += 1)]);
+    playAudio(isPlaying, audioRef);
+    songs.forEach((item) => (item.active = false));
+    songs[i].active = true;
   };
   const musicBack = () => {
     let i = musicIdentifier();
     if (i <= 0) {
-      i = 3;
+      i = songs.length;
     }
     setCurrentSong(songs[(i -= 1)]);
+    playAudio(isPlaying, audioRef);
+
+    songs.forEach((item) => (item.active = false));
+    songs[i].active = true;
   };
   //useRef
 
@@ -78,7 +99,19 @@ const Player = ({
       audioRef.current.pause();
       setisPlaying(!isPlaying);
     } else {
-      audioRef.current.play();
+      var playPromise = audioRef.current.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Automatic playback started!
+            // Show playing UI.
+          })
+          .catch((error) => {
+            // Auto-play was prevented
+            // Show paused UI.
+          });
+      }
       setisPlaying(!isPlaying);
     }
   };
@@ -116,20 +149,30 @@ const Player = ({
   // const getDuration = () => {
   //   if (audioRef.current != null) return audioRef.current.duration;
   // };
-
+  const trackAnim = {
+    transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
   return (
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-
-        <input
-          min={0}
-          max={songInfo.duration || 0}
-          value={songInfo.currentTime}
-          type="range"
-          onChange={dragHandler}
-        ></input>
-        <p> {getTime(songInfo.duration)}</p>
+        <div
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]},${currentSong.color[1]})`,
+          }}
+          className="track"
+        >
+          <input
+            className="volumeChangeInput"
+            min={0}
+            max={songInfo.duration || 0}
+            value={songInfo.currentTime}
+            type="range"
+            onChange={dragHandler}
+          ></input>
+          <div style={trackAnim} className="animate-track"></div>
+        </div>
+        <p> {songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-control">
         <FontAwesomeIcon

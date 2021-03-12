@@ -36,6 +36,7 @@
   align-items: center;
   padding: 1rem 2rem 1rem 2rem;
   cursor: pointer;
+  transition: background 0.25s ease;
   //   flex-wrap: wrap;
   img {
     width: 30%;
@@ -65,4 +66,9 @@
   transform: translateX(0%);
   opacity: 1;
   // display: block;
+}
+@media screen and (max-width: 768px) {
+  .library {
+    width: 100%;
+  }
 }

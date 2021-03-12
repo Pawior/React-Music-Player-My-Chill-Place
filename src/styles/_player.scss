@@ -1,3 +1,7 @@
+body {
+  padding: 0;
+  margin: 0;
+}
 .player {
   min-height: 20vh;
   display: flex;
@@ -9,13 +13,15 @@
   width: 50%;
   background: white;
   display: flex;
+  align-items: center;
 
   input {
     width: 100%;
-    padding: 1rem 0rem;
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
   }
   p {
-    padding: 1rem;
   }
 }
 .play-control {
@@ -34,6 +40,60 @@
   justify-content: center;
   gap: 10px;
   .volumeRange {
-    width: 5vw;
+    width: 10vw;
+  }
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+}
+
+.volumeChangeInput::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  height: 16px;
+  width: 16px;
+}
+// input[type="range"]::-moz-range-thumb {
+//   -webkit-appearance: none;
+//   background: transparent;
+//   border: none;
+//   height: 16px;
+//   width: 16px;
+// }
+
+.track {
+  background-color: lightblue;
+  width: 100%;
+  height: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  margin: 1rem;
+}
+
+.animate-track {
+  background: rgb(204, 204, 204);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  pointer-events: none;
+}
+
+@media screen and (max-width: 768px) {
+  .time-control {
+    width: 80%;
+  }
+  .play-control {
+    width: 70%;
   }
 }
