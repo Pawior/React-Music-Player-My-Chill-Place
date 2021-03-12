@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Monda:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+* {
+  font-family: "Monda", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+h1,
+h2,
+h2 {
+  color: rgb(54, 52, 52);
+  font-weight: 400;
+}
+h3 {
+  color: rgb(100, 100, 100);
+  font-weight: 400;
+}
+.App {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.All {
+  width: 100vw;
+}
+@import "./song"; // Dwa sposoby nazwy? oba działają
+@import "./_player.scss";
+@import "./library";
+@import "./nav";
