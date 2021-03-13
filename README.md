@@ -2,7 +2,7 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Apperance](#how-does-it-looks-like?)
+* [How does it looks like?](#how-does-it-looks-like?)
 * [Technologies](#technologies)
 * [Sources](#sources)
 
