@@ -52,11 +52,52 @@ function chillHop() {
       active: false,
     },
     {
+      name: "Hotel Lobby Birthday Party",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/10/23fdd99adc3e16abcb67b004ea3e748ebf433a49-1024x1024.jpg",
+      artist: "Aviino, Oliv",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10452",
+      color: ["#293059", "#CC93D3"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Snowstalgia",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/10/0e5bb63f838ff92eeac142aae944e9f678df13c9-1024x1024.jpg",
+      artist: "invention_",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10305",
+      color: ["#283F61", "#D6A0B8"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
       name: "Sundown",
-      cover: "https://i.scdn.co/image/ab67616d0000b273084e106f28b2fdfc8ac25382",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/07/4551baea04f413236b4f3e3039efc361935a9e28-1024x1024.jpg",
       artist: "Aarigod",
-      audio: "https://mp3.chillhop.com/serve.php/?mp3=13005",
-      color: ["#FEFAEF", "#F4E077"],
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=8974",
+      color: ["#ACC1DE", "#9DB6A0"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Going Back",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/10/0e5bb63f838ff92eeac142aae944e9f678df13c9-1024x1024.jpg",
+      artist: "Swørn",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10310",
+      color: ["#283F61", "#D6A0B8"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "Kinsfolk",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-1024x1024.jpg",
+      artist: "Aarigod",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=12997",
+      color: ["#7B6042", "#A0BB64"],
       id: uuidv4(),
       active: false,
     },
