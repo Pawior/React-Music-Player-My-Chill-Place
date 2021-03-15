@@ -20,6 +20,7 @@ function App() {
   // Ref
   const audioRef = useRef(null);
   const [volume, setVolume] = useState(100);
+  const [sleepMenu, setSleepMenu] = useState(false);
 
   const songEnd = async () => {
     function findIt(element) {
@@ -49,7 +50,15 @@ function App() {
     <div className={`App ${libraryStatus ? "library-active" : ""}`}>
       <div className="All">
         {" "}
-        <Nav libraryStatus={libraryStatus} setLibraryStatus={setLibraryStatus}>
+        <Nav
+          libraryStatus={libraryStatus}
+          setLibraryStatus={setLibraryStatus}
+          sleepMenu={sleepMenu}
+          setSleepMenu={setSleepMenu}
+          setCurrentSong={setCurrentSong}
+          audioRef={audioRef}
+          setisPlaying={setisPlaying}
+        >
           {" "}
         </Nav>
         <Song currentSong={currentSong}> </Song>

@@ -10,6 +10,7 @@ nav {
     border-radius: 7%;
     padding: 2px 5px;
     cursor: pointer;
+    z-index: 1;
     transition: all 0.3s ease-in-out;
     &:hover {
       background: rgb(65, 65, 65);
@@ -17,10 +18,32 @@ nav {
     }
   }
 }
+.navigation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.navMenu {
+  display: none;
+  position: absolute;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 200%;
+}
+.active-sleepMenu {
+  display: flex;
+}
+.sleepTime {
+}
+
 @media screen and (max-width: 768px) {
   nav {
-    button {
-      z-index: 10;
+    .libraryBtn {
+      z-index: 10 !important;
     }
+  }
+  .navMenu {
+    width: 180%;
+    height: 200%;
   }
 }
