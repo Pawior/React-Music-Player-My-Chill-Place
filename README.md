@@ -8,6 +8,7 @@
 
 ## General info
 Music Player written using React. Simple, but with some nice visual effects. Songs were taken from Chillhop.com. Webiste is responsive and ready to work with smartphones.
+Music Player has got sleep mode feature which allow users to choose time period after which music will turn off. It could be very helpful while trying to sleep.
 ## How does it looks like?
 ![image](./img/preview.png)	
 * Live update
