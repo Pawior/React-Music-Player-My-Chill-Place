@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/React-Music-Player-My-Chill-Place/static/css/main.913a3657.chunk.css",
+    "main.css": "/React-Music-Player-My-Chill-Place/static/css/main.5fef901e.chunk.css",
     "main.js": "/React-Music-Player-My-Chill-Place/static/js/main.9ea54304.chunk.js",
     "main.js.map": "/React-Music-Player-My-Chill-Place/static/js/main.9ea54304.chunk.js.map",
     "runtime-main.js": "/React-Music-Player-My-Chill-Place/static/js/runtime-main.99f5d1b0.js",
@@ -10,13 +10,13 @@
     "static/js/3.054deeaa.chunk.js": "/React-Music-Player-My-Chill-Place/static/js/3.054deeaa.chunk.js",
     "static/js/3.054deeaa.chunk.js.map": "/React-Music-Player-My-Chill-Place/static/js/3.054deeaa.chunk.js.map",
     "index.html": "/React-Music-Player-My-Chill-Place/index.html",
-    "static/css/main.913a3657.chunk.css.map": "/React-Music-Player-My-Chill-Place/static/css/main.913a3657.chunk.css.map",
+    "static/css/main.5fef901e.chunk.css.map": "/React-Music-Player-My-Chill-Place/static/css/main.5fef901e.chunk.css.map",
     "static/js/2.6cd9c8be.chunk.js.LICENSE.txt": "/React-Music-Player-My-Chill-Place/static/js/2.6cd9c8be.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.99f5d1b0.js",
     "static/js/2.6cd9c8be.chunk.js",
-    "static/css/main.913a3657.chunk.css",
+    "static/css/main.5fef901e.chunk.css",
     "static/js/main.9ea54304.chunk.js"
   ]
 }
