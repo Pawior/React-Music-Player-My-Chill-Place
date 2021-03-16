@@ -21,9 +21,11 @@ nav {
   }
 }
 .navigation {
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   position: relative;
+  gap: 5px;
 }
 .navMenu {
   display: flex;
