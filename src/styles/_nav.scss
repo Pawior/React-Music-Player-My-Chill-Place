@@ -12,9 +12,11 @@ nav {
     cursor: pointer;
     z-index: 1;
     transition: all 0.3s ease-in-out;
+    color: var(--primaryTextColor);
+
     &:hover {
-      background: rgb(65, 65, 65);
-      color: white;
+      background-color: var(--oppositeBackgroundColor) !important;
+      color: var(--oppositeTextColor) !important;
     }
   }
 }
@@ -24,18 +26,24 @@ nav {
   position: relative;
 }
 .navMenu {
-  display: none;
+  display: flex;
   position: absolute;
   align-items: flex-end;
   flex-direction: column;
   width: 200%;
+  opacity: 0;
+  transition: all 0.5s ease;
+  visibility: hidden;
 }
 .active-sleepMenu {
-  display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 .sleepTime {
 }
-
+.react-toggle {
+  justify-self: center;
+}
 @media screen and (max-width: 768px) {
   nav {
     .libraryBtn {

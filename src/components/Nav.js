@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import Toggle from "react-toggle";
+import { useMediaQuery } from "react-responsive";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMusic, faMoon } from "@fortawesome/free-solid-svg-icons";
+
+const DARK_CLASS = "dark";
 
 const Nav = ({
   libraryStatus,
@@ -14,12 +18,32 @@ const Nav = ({
     setSleepMenu(!sleepMenu);
   };
 
+  const DARK_CLASS = "dark";
+  const systemPrefersDark = useMediaQuery(
+    {
+      query: "(prefers-color-scheme: dark)",
+    },
+    undefined,
+    (prefersDark) => {
+      setIsDark(prefersDark);
+    }
+  );
+  const [isDark, setIsDark] = useState(systemPrefersDark);
+  useEffect(() => {
+    if (isDark) {
+      document.body.classList.add(DARK_CLASS);
+    } else {
+      document.body.classList.remove(DARK_CLASS);
+    }
+  }, [isDark]);
+
   const setSleep = (time) => {
     setTimeout(() => {
       audioRef.current.pause();
       setisPlaying(false);
     }, time * 1000);
   };
+
   return (
     <nav>
       <h1> My Chill Place </h1>
@@ -35,6 +59,16 @@ const Nav = ({
           {" "}
           Sleep <FontAwesomeIcon icon={faMoon}> </FontAwesomeIcon>
         </button>
+        <Toggle
+          className="darkToggle"
+          checked={isDark}
+          onChange={(event) => setIsDark(event.target.checked)}
+          // icons={{
+          //   checked: <FontAwesomeIcon icon={faMoon}> </FontAwesomeIcon>,
+          //   unchecked: "🔆",
+          // }}
+          aria-label="Dark mode"
+        />
         <div className={`navMenu ${sleepMenu ? "active-sleepMenu" : ""}`}>
           <button
             className="sleepTime"

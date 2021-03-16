@@ -12,23 +12,6 @@ const Library = ({
   libraryStatus,
   setLibraryStatus,
 }) => {
-  // let library = "library";
-  // const libraryHandler = () => {
-  //   console.log("Ds");
-  //   if (libraryStatus) {
-  //     library += "active-library";
-  //   }
-  // };
-  // if (libraryStatus) {
-  //   library += " active-library-display";
-  // }
-
-  // async function someFunct() {
-  //   if (library == "library active-library-display") {
-  //     await do_thing_a((library += " active-library"));
-  //   }
-  // }
-
   return (
     <div className={`library ${libraryStatus ? "active-library" : ""}`}>
       <h2 class="libraryTheName"> Library</h2>

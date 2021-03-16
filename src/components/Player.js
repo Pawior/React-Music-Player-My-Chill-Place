@@ -23,39 +23,8 @@ const Player = ({
   songEnd,
   setSongEnd,
 }) => {
-  // useEffect(() => {
-  //   const audiooo = document.querySelector(".audiooo");
-  //   const current = audiooo.currentTime;
-  //   const duration = audiooo.duration;
-  //   audiooo.addEventListener(
-  //     "canplaythrough",
-  //     function () {
-  //       alert("ended");
-  //       console.log("JUPII");
-  //       setSongInfo({
-  //         ...songInfo,
-  //         currentTime: currentSong.audio.currentTime,
-  //         duration: currentSong.audio.duration,
-  //       });
-  //       console.log(songInfo);
-  //     },
-  //     false
-  //   );
-  //   console.log(audiooo);
-  // }, []);
-
-  // State
-
   // Functions
   const startMusic = () => {
-    // if (isPlaying) {
-    //   const playPromise = audioRef.current.play();
-    //   if (playPromise !== undefined) {
-    //     playPromise.then((audio) => {
-    //       audioRef.current.play();
-    //     });
-    //   }
-    // }
     return playAudio(isPlaying, audioRef);
   };
   const musicIdentifier = () => {
@@ -86,10 +55,9 @@ const Player = ({
     songs.forEach((item) => (item.active = false));
     songs[i].active = true;
   };
-  //useRef
 
   const playSongHandler = () => {
-    // if (audioRef.current.paused == false) {          ROZWIĄZANIE BARDZIEJ JS XD
+    // if (audioRef.current.paused == false) {          ROZWIĄZANIE BARDZIEJ JS
     //   audioRef.current.pause();
     // } else {
     //   audioRef.current.play();
@@ -102,15 +70,7 @@ const Player = ({
       var playPromise = audioRef.current.play();
 
       if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            // Automatic playback started!
-            // Show playing UI.
-          })
-          .catch((error) => {
-            // Auto-play was prevented
-            // Show paused UI.
-          });
+        playPromise.then(() => {}).catch((error) => {});
       }
       setisPlaying(!isPlaying);
     }
@@ -146,9 +106,7 @@ const Player = ({
   const volumeReturn = () => {
     return audioRef.current.volume;
   };
-  // const getDuration = () => {
-  //   if (audioRef.current != null) return audioRef.current.duration;
-  // };
+
   const trackAnim = {
     transform: `translateX(${songInfo.animationPercentage}%)`,
   };

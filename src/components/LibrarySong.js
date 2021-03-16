@@ -12,24 +12,20 @@ const LibrarySong = ({
   setSongs,
 }) => {
   const songPicker = () => {
-    // function findIt(element) {                   ALTERNATYWNA METEODA XDDDD tylko parę linii więcej
+    // function findIt(element) {                   Bardziej JS rozwiązanie
     //   return element.id == song.id;
     // }
     // let i = songs.findIndex(findIt);
     // setCurrentSong(songs[2]);
     // console.log(i);
     // setCurrentSong(songs[i]);
-    // 2 metoda
-    // const selectedSong = songs.filter((item) => item.id === id);
-    // console.log(selectedSong[0]);
-    // setCurrentSong(selectedSong[0]);
-    //3 metoda
+    //2 metoda                                     Bardziej React
 
     setCurrentSong(song);
     playAudio(isPlaying, audioRef);
 
     // Podświetlenie piosenki w bibliotece po kliknieciu
-    // const newSongs = songs.map((song) => {           SPOSÓB TEGO DEBILA
+    // const newSongs = songs.map((song) => {           Gorszy sposób
     //   if (song.id === id) {
     //     return {
     //       ...song,
@@ -43,8 +39,8 @@ const LibrarySong = ({
     //   }
     // });
     // setSongs(newSongs);
-    // II metoda - moja
-    songs.forEach((item) => (item.active = false)); //MÓJ SPOSÓB
+    // II metoda
+    songs.forEach((item) => (item.active = false));
     song.active = true;
   };
   return (
